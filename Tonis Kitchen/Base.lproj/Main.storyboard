@@ -65,18 +65,18 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GT0-oQ-L7h">
-                                <rect key="frame" x="156" y="396" width="102" height="30"/>
-                                <state key="normal" title="Place an Order"/>
+                                <rect key="frame" x="150" y="396" width="114" height="30"/>
+                                <state key="normal" title="View My Orders"/>
                                 <connections>
                                     <action selector="placeOrderButtonPressed:" destination="cBe-2G-016" eventType="touchUpInside" id="Gbx-xD-Ish"/>
-                                    <segue destination="4cH-aS-X0k" kind="presentation" modalPresentationStyle="fullScreen" id="5DQ-ic-MOZ"/>
+                                    <segue destination="mdR-pe-0dS" kind="show" identifier="ShowOrders" id="jgb-Uf-eCK"/>
                                 </connections>
                             </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="JlF-Hf-5CG">
                                 <rect key="frame" x="16" y="476" width="382" height="378"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" id="eST-L2-WQD">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" id="eST-L2-WQD">
                                         <rect key="frame" x="0.0" y="24.5" width="382" height="43.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="eST-L2-WQD" id="hUq-e9-hwh">
@@ -97,7 +97,7 @@
                             <constraint firstItem="GT0-oQ-L7h" firstAttribute="top" secondItem="T1Z-nC-6xt" secondAttribute="bottom" constant="8" id="F9v-Hs-QHL"/>
                             <constraint firstItem="AeA-N2-eba" firstAttribute="top" secondItem="GT0-oQ-L7h" secondAttribute="bottom" constant="8" id="Ipy-q1-tWo"/>
                             <constraint firstItem="ePc-C9-A3H" firstAttribute="trailing" secondItem="T1Z-nC-6xt" secondAttribute="trailing" constant="16" id="K9r-Hd-tG4"/>
-                            <constraint firstItem="GT0-oQ-L7h" firstAttribute="leading" secondItem="ePc-C9-A3H" secondAttribute="leading" constant="156" id="UwA-mv-bmj"/>
+                            <constraint firstItem="GT0-oQ-L7h" firstAttribute="leading" secondItem="ePc-C9-A3H" secondAttribute="leading" constant="150" id="UwA-mv-bmj"/>
                             <constraint firstItem="ePc-C9-A3H" firstAttribute="trailing" secondItem="JlF-Hf-5CG" secondAttribute="trailing" constant="16" id="a4x-a8-PZW"/>
                             <constraint firstItem="AeA-N2-eba" firstAttribute="leading" secondItem="02J-ZW-Suh" secondAttribute="trailing" id="bRE-U2-3Oe"/>
                             <constraint firstItem="ePc-C9-A3H" firstAttribute="trailing" secondItem="AeA-N2-eba" secondAttribute="trailing" constant="16" id="f4t-Fn-9Wy"/>
@@ -105,7 +105,7 @@
                             <constraint firstItem="02J-ZW-Suh" firstAttribute="top" secondItem="GT0-oQ-L7h" secondAttribute="bottom" constant="8" id="jQz-ek-KJj"/>
                             <constraint firstItem="T1Z-nC-6xt" firstAttribute="top" secondItem="Cgs-Ib-dyM" secondAttribute="bottom" id="n15-wC-VzY"/>
                             <constraint firstItem="Cgs-Ib-dyM" firstAttribute="leading" secondItem="ePc-C9-A3H" secondAttribute="leading" constant="16" id="nJV-Pg-4h9"/>
-                            <constraint firstItem="ePc-C9-A3H" firstAttribute="trailing" secondItem="GT0-oQ-L7h" secondAttribute="trailing" constant="156" id="pYJ-C9-s0M"/>
+                            <constraint firstItem="ePc-C9-A3H" firstAttribute="trailing" secondItem="GT0-oQ-L7h" secondAttribute="trailing" constant="150" id="pYJ-C9-s0M"/>
                             <constraint firstItem="Cgs-Ib-dyM" firstAttribute="top" secondItem="ePc-C9-A3H" secondAttribute="top" id="qcc-pc-hHi"/>
                             <constraint firstItem="JlF-Hf-5CG" firstAttribute="top" secondItem="AeA-N2-eba" secondAttribute="bottom" constant="8" id="rC7-kh-AtM"/>
                             <constraint firstItem="T1Z-nC-6xt" firstAttribute="leading" secondItem="ePc-C9-A3H" secondAttribute="leading" constant="16" id="uS7-a9-slb"/>
@@ -129,6 +129,49 @@
                 <exit id="JR1-nF-S1L" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="1873.913043478261" y="77.678571428571431"/>
+        </scene>
+        <!--Order List View Controller-->
+        <scene sceneID="Au1-0i-Bmm">
+            <objects>
+                <viewController id="mdR-pe-0dS" customClass="OrderListViewController" customModule="Tonis_Kitchen" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="bMa-XH-1KO">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="eyO-pm-7kd">
+                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="Cell" id="WZI-Ya-WeY">
+                                        <rect key="frame" x="0.0" y="24.5" width="414" height="43.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="WZI-Ya-WeY" id="hKK-ZD-V8S">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Shq-hy-0Os"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Shq-hy-0Os" firstAttribute="bottom" secondItem="eyO-pm-7kd" secondAttribute="bottom" id="MAK-eL-zgn"/>
+                            <constraint firstItem="Shq-hy-0Os" firstAttribute="trailing" secondItem="eyO-pm-7kd" secondAttribute="trailing" id="SmH-RM-fdu"/>
+                            <constraint firstItem="eyO-pm-7kd" firstAttribute="top" secondItem="Shq-hy-0Os" secondAttribute="top" id="ctw-Jg-fms"/>
+                            <constraint firstItem="eyO-pm-7kd" firstAttribute="leading" secondItem="Shq-hy-0Os" secondAttribute="leading" id="oxw-1w-00o"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="Ito-80-sIE">
+                        <barButtonItem key="rightBarButtonItem" title="New Order" id="nDf-Zf-gN4"/>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="tableView" destination="eyO-pm-7kd" id="6gS-Yh-IfE"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3IQ-si-v7I" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2662" y="-139"/>
         </scene>
         <!--Order Detail View Controller-->
         <scene sceneID="z7r-Lq-44Y">
@@ -277,7 +320,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4VF-MO-ppJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3642.0289855072465" y="-328.125"/>
+            <point key="canvasLocation" x="3609" y="-822"/>
         </scene>
         <!--Menu Detail View Controller-->
         <scene sceneID="i5Q-sn-GEw">
@@ -302,7 +345,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6ns-d2-t7r" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2669.5652173913045" y="509.59821428571428"/>
+            <point key="canvasLocation" x="2670" y="650"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="bse-In-tmU">
@@ -338,7 +381,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Vnv-dQ-RM2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2670" y="-328"/>
+            <point key="canvasLocation" x="2670" y="-822"/>
         </scene>
     </scenes>
     <resources>

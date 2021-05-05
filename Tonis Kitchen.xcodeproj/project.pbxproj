@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		909051F52642D1FF00957256 /* OrderListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 909051F42642D1FF00957256 /* OrderListViewController.swift */; };
+		909051F72642D2EC00957256 /* Order.swift in Sources */ = {isa = PBXBuildFile; fileRef = 909051F62642D2EC00957256 /* Order.swift */; };
 		90931292264223CD0088BB58 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90931291264223CD0088BB58 /* AppDelegate.swift */; };
 		90931294264223CD0088BB58 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90931293264223CD0088BB58 /* SceneDelegate.swift */; };
 		90931296264223CD0088BB58 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90931295264223CD0088BB58 /* LoginViewController.swift */; };
@@ -22,6 +24,8 @@
 
 /* Begin PBXFileReference section */
 		60C80C4A25572814BBD92B69 /* Pods_Tonis_Kitchen.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Tonis_Kitchen.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		909051F42642D1FF00957256 /* OrderListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderListViewController.swift; sourceTree = "<group>"; };
+		909051F62642D2EC00957256 /* Order.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Order.swift; sourceTree = "<group>"; };
 		9093128E264223CD0088BB58 /* Tonis Kitchen.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Tonis Kitchen.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		90931291264223CD0088BB58 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		90931293264223CD0088BB58 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -90,10 +94,12 @@
 			children = (
 				90931291264223CD0088BB58 /* AppDelegate.swift */,
 				90931293264223CD0088BB58 /* SceneDelegate.swift */,
+				909051F62642D2EC00957256 /* Order.swift */,
 				90931295264223CD0088BB58 /* LoginViewController.swift */,
 				90F33FAD26422B6200DF6FAC /* HomeScreenViewController.swift */,
 				90F33FAF2642311000DF6FAC /* MenuDetailViewController.swift */,
 				90F33FB12642345800DF6FAC /* OrderDetailViewController.swift */,
+				909051F42642D1FF00957256 /* OrderListViewController.swift */,
 				90931297264223CD0088BB58 /* Main.storyboard */,
 				9093129A264223CF0088BB58 /* Assets.xcassets */,
 				9093129C264223CF0088BB58 /* LaunchScreen.storyboard */,
@@ -238,7 +244,9 @@
 			files = (
 				90F33FB22642345800DF6FAC /* OrderDetailViewController.swift in Sources */,
 				90931296264223CD0088BB58 /* LoginViewController.swift in Sources */,
+				909051F72642D2EC00957256 /* Order.swift in Sources */,
 				90F33FB02642311000DF6FAC /* MenuDetailViewController.swift in Sources */,
+				909051F52642D1FF00957256 /* OrderListViewController.swift in Sources */,
 				90F33FAE26422B6200DF6FAC /* HomeScreenViewController.swift in Sources */,
 				90931292264223CD0088BB58 /* AppDelegate.swift in Sources */,
 				90931294264223CD0088BB58 /* SceneDelegate.swift in Sources */,
