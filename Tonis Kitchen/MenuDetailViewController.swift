@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  MenuDetailViewController.swift
 //  Tonis Kitchen
 //
 //  Created by Grace Carroll on 5/4/21.
@@ -7,13 +7,12 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class MenuDetailViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+
         // Do any additional setup after loading the view.
     }
 
-
 }
-

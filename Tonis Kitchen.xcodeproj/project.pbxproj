@@ -3,27 +3,39 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		90931292264223CD0088BB58 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90931291264223CD0088BB58 /* AppDelegate.swift */; };
 		90931294264223CD0088BB58 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90931293264223CD0088BB58 /* SceneDelegate.swift */; };
-		90931296264223CD0088BB58 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90931295264223CD0088BB58 /* ViewController.swift */; };
+		90931296264223CD0088BB58 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90931295264223CD0088BB58 /* LoginViewController.swift */; };
 		90931299264223CD0088BB58 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 90931297264223CD0088BB58 /* Main.storyboard */; };
 		9093129B264223CF0088BB58 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9093129A264223CF0088BB58 /* Assets.xcassets */; };
 		9093129E264223CF0088BB58 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9093129C264223CF0088BB58 /* LaunchScreen.storyboard */; };
+		90F33FAC264225EF00DF6FAC /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 90F33FAB264225EF00DF6FAC /* GoogleService-Info.plist */; };
+		90F33FAE26422B6200DF6FAC /* HomeScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90F33FAD26422B6200DF6FAC /* HomeScreenViewController.swift */; };
+		90F33FB02642311000DF6FAC /* MenuDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90F33FAF2642311000DF6FAC /* MenuDetailViewController.swift */; };
+		90F33FB22642345800DF6FAC /* OrderDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90F33FB12642345800DF6FAC /* OrderDetailViewController.swift */; };
+		CFE6FBE5074DC5159F1483FC /* Pods_Tonis_Kitchen.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 60C80C4A25572814BBD92B69 /* Pods_Tonis_Kitchen.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		60C80C4A25572814BBD92B69 /* Pods_Tonis_Kitchen.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Tonis_Kitchen.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9093128E264223CD0088BB58 /* Tonis Kitchen.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Tonis Kitchen.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		90931291264223CD0088BB58 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		90931293264223CD0088BB58 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		90931295264223CD0088BB58 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		90931295264223CD0088BB58 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		90931298264223CD0088BB58 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		9093129A264223CF0088BB58 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9093129D264223CF0088BB58 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9093129F264223CF0088BB58 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		90F33FAB264225EF00DF6FAC /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
+		90F33FAD26422B6200DF6FAC /* HomeScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreenViewController.swift; sourceTree = "<group>"; };
+		90F33FAF2642311000DF6FAC /* MenuDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuDetailViewController.swift; sourceTree = "<group>"; };
+		90F33FB12642345800DF6FAC /* OrderDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderDetailViewController.swift; sourceTree = "<group>"; };
+		9B34B91B0BBF4AAB67D621A7 /* Pods-Tonis Kitchen.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tonis Kitchen.debug.xcconfig"; path = "Target Support Files/Pods-Tonis Kitchen/Pods-Tonis Kitchen.debug.xcconfig"; sourceTree = "<group>"; };
+		E54515F546BA7F967440CB57 /* Pods-Tonis Kitchen.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tonis Kitchen.release.xcconfig"; path = "Target Support Files/Pods-Tonis Kitchen/Pods-Tonis Kitchen.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,17 +43,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CFE6FBE5074DC5159F1483FC /* Pods_Tonis_Kitchen.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		151F2CA60BF3AC0FF9F07475 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				60C80C4A25572814BBD92B69 /* Pods_Tonis_Kitchen.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		225CABC3F5A31C82053B217F /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				9B34B91B0BBF4AAB67D621A7 /* Pods-Tonis Kitchen.debug.xcconfig */,
+				E54515F546BA7F967440CB57 /* Pods-Tonis Kitchen.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		90931285264223CD0088BB58 = {
 			isa = PBXGroup;
 			children = (
 				90931290264223CD0088BB58 /* Tonis Kitchen */,
 				9093128F264223CD0088BB58 /* Products */,
+				225CABC3F5A31C82053B217F /* Pods */,
+				151F2CA60BF3AC0FF9F07475 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -58,11 +90,15 @@
 			children = (
 				90931291264223CD0088BB58 /* AppDelegate.swift */,
 				90931293264223CD0088BB58 /* SceneDelegate.swift */,
-				90931295264223CD0088BB58 /* ViewController.swift */,
+				90931295264223CD0088BB58 /* LoginViewController.swift */,
+				90F33FAD26422B6200DF6FAC /* HomeScreenViewController.swift */,
+				90F33FAF2642311000DF6FAC /* MenuDetailViewController.swift */,
+				90F33FB12642345800DF6FAC /* OrderDetailViewController.swift */,
 				90931297264223CD0088BB58 /* Main.storyboard */,
 				9093129A264223CF0088BB58 /* Assets.xcassets */,
 				9093129C264223CF0088BB58 /* LaunchScreen.storyboard */,
 				9093129F264223CF0088BB58 /* Info.plist */,
+				90F33FAB264225EF00DF6FAC /* GoogleService-Info.plist */,
 			);
 			path = "Tonis Kitchen";
 			sourceTree = "<group>";
@@ -74,9 +110,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 909312A2264223CF0088BB58 /* Build configuration list for PBXNativeTarget "Tonis Kitchen" */;
 			buildPhases = (
+				AB856F2586F1922FA305564D /* [CP] Check Pods Manifest.lock */,
 				9093128A264223CD0088BB58 /* Sources */,
 				9093128B264223CD0088BB58 /* Frameworks */,
 				9093128C264223CD0088BB58 /* Resources */,
+				83000D70EDCFF25AEAC6479E /* [CP] Embed Pods Frameworks */,
+				9233F92C78A627E42FFC5AF7 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -125,6 +164,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9093129E264223CF0088BB58 /* LaunchScreen.storyboard in Resources */,
+				90F33FAC264225EF00DF6FAC /* GoogleService-Info.plist in Resources */,
 				9093129B264223CF0088BB58 /* Assets.xcassets in Resources */,
 				90931299264223CD0088BB58 /* Main.storyboard in Resources */,
 			);
@@ -132,12 +172,74 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		83000D70EDCFF25AEAC6479E /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Tonis Kitchen/Pods-Tonis Kitchen-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Tonis Kitchen/Pods-Tonis Kitchen-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Tonis Kitchen/Pods-Tonis Kitchen-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9233F92C78A627E42FFC5AF7 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Tonis Kitchen/Pods-Tonis Kitchen-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Tonis Kitchen/Pods-Tonis Kitchen-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Tonis Kitchen/Pods-Tonis Kitchen-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		AB856F2586F1922FA305564D /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Tonis Kitchen-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		9093128A264223CD0088BB58 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				90931296264223CD0088BB58 /* ViewController.swift in Sources */,
+				90F33FB22642345800DF6FAC /* OrderDetailViewController.swift in Sources */,
+				90931296264223CD0088BB58 /* LoginViewController.swift in Sources */,
+				90F33FB02642311000DF6FAC /* MenuDetailViewController.swift in Sources */,
+				90F33FAE26422B6200DF6FAC /* HomeScreenViewController.swift in Sources */,
 				90931292264223CD0088BB58 /* AppDelegate.swift in Sources */,
 				90931294264223CD0088BB58 /* SceneDelegate.swift in Sources */,
 			);
@@ -283,6 +385,7 @@
 		};
 		909312A3264223CF0088BB58 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9B34B91B0BBF4AAB67D621A7 /* Pods-Tonis Kitchen.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -302,6 +405,7 @@
 		};
 		909312A4264223CF0088BB58 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E54515F546BA7F967440CB57 /* Pods-Tonis Kitchen.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
