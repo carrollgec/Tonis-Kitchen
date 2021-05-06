@@ -14,8 +14,9 @@ class OrderDetailViewController: UIViewController {
     @IBOutlet weak var phoneTextField: UITextField!
     @IBOutlet weak var pickupTextField: UITextField!
     @IBOutlet weak var timeTextField: UITextField!
+    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var menuItemLabel: UILabel!
     
-
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -23,5 +24,7 @@ class OrderDetailViewController: UIViewController {
     }
     
 
-
+    @IBAction func selectItemButtonPressed(_ sender: UIButton) {
+    }
+    
 }
