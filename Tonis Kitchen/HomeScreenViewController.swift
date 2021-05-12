@@ -13,7 +13,6 @@ class HomeScreenViewController: UIViewController {
     @IBOutlet weak var menuTableView: UITableView!
     
     var menuItemArray = ["Apples", "Frozen Meals", "Bread", "Peanut Butter"]
-    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,6 +21,14 @@ class HomeScreenViewController: UIViewController {
         menuTableView.dataSource = self
 
     }
+    //TODO: code prepare for segue to transfer menu item info to menu detail view controller
+//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//        if segue.identifier == "ShowMenu" {
+//            let destination = segue.destination as! MenuDetailViewController
+//            let selectedIndexPath = menuTableView.indexPathForSelectedRow!
+//            destination.order = menuItemArray[selectedIndexPath.row]
+//        }
+//    }
 }
 
 extension HomeScreenViewController: UITableViewDelegate, UITableViewDataSource {

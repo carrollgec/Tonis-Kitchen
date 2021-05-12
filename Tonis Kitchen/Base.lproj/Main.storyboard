@@ -365,8 +365,16 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="gwb-7X-Q2z">
-                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="pjJ-TO-eV9"/>
-                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="AmV-AX-eGH"/>
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="pjJ-TO-eV9">
+                            <connections>
+                                <action selector="cancelButtonPressed:" destination="ECE-xI-w8g" id="5BL-ER-WfD"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="AmV-AX-eGH">
+                            <connections>
+                                <action selector="saveButtonPressed:" destination="ECE-xI-w8g" id="7DK-Wm-Kny"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <connections>
                         <outlet property="addressTextField" destination="kHo-kY-bGe" id="EnM-3t-Nrr"/>

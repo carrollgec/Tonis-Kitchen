@@ -15,16 +15,22 @@ class OrderDetailViewController: UIViewController {
     @IBOutlet weak var pickupTextField: UITextField!
     @IBOutlet weak var timeTextField: UITextField!
     @IBOutlet weak var tableView: UITableView!
-    @IBOutlet weak var menuItemLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
     }
-    
 
     @IBAction func selectItemButtonPressed(_ sender: UIButton) {
+        //TODO: code selection button
+    }
+    
+    @IBAction func cancelButtonPressed(_ sender: UIBarButtonItem) {
+        //TODO: code cancel button
+    }
+    
+    @IBAction func saveButtonPressed(_ sender: UIBarButtonItem) {
+        //TODO: code save button
     }
     
 }
