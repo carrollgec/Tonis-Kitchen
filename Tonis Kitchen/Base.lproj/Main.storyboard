@@ -105,7 +105,7 @@
                     <navigationItem key="navigationItem" id="F7e-Nw-Ix8">
                         <barButtonItem key="leftBarButtonItem" title="Sign Out" id="Aea-nG-sgM" customClass="home">
                             <connections>
-                                <segue destination="JR1-nF-S1L" kind="unwind" unwindAction="unwindSignOutPressedWithSegue:" id="gIr-jT-eRS"/>
+                                <segue destination="JR1-nF-S1L" kind="unwind" identifier="SignOutUnwind" unwindAction="unwindSignOutPressedWithSegue:" id="gIr-jT-eRS"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="View My Orders" id="LuP-WD-ldS">
@@ -452,7 +452,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="WD3-x3-k9V"/>
+        <segue reference="6he-9U-j4i"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="checkmark.rectangle" catalog="system" width="128" height="93"/>
