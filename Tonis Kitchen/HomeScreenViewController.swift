@@ -12,33 +12,37 @@ class HomeScreenViewController: UIViewController {
     @IBOutlet weak var selectionWeekTextField: UITextField!
     @IBOutlet weak var menuTableView: UITableView!
     
-    var menuItemArray = ["Apples", "Frozen Meals", "Bread", "Peanut Butter"]
+    var menuItems: MenuItems!
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        menuItems = MenuItems()
+        
+        menuItems.populateMenu()
         
         menuTableView.delegate = self
         menuTableView.dataSource = self
 
     }
     //TODO: code prepare for segue to transfer menu item info to menu detail view controller
-//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//        if segue.identifier == "ShowMenu" {
-//            let destination = segue.destination as! MenuDetailViewController
-//            let selectedIndexPath = menuTableView.indexPathForSelectedRow!
-//            destination.order = menuItemArray[selectedIndexPath.row]
-//        }
-//    }
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "ShowMenu" {
+            let destination = segue.destination as! MenuDetailViewController
+            let selectedIndexPath = menuTableView.indexPathForSelectedRow!
+            destination.menuItem = menuItems.menuItemArray[selectedIndexPath.row]
+        }
+    }
 }
 
 extension HomeScreenViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return menuItemArray.count
+        return menuItems.menuItemArray.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
-        cell.textLabel?.text = menuItemArray[indexPath.row]
+        cell.textLabel?.text = menuItems.menuItemArray[indexPath.row].item
         return cell
     }
     

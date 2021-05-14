@@ -9,6 +9,7 @@ import Foundation
 import Firebase
 
 class Orders {
+    
     var orderArray: [Order] = []
     var db: Firestore!
     
@@ -30,5 +31,14 @@ class Orders {
             }
             completed()
         }
+    }
+    
+    func populateOrders() {
+        let order1 = Order(postingUserID: "", name: "Grace", emailAddress: "", phoneNumber: "", pickup: "Yes", timePickup: "4:00pm", itemOrderArray: [""], documentID: "")
+        let order2 = Order(postingUserID: "", name: "Soph", emailAddress: "", phoneNumber: "", pickup: "No", timePickup: "N/A", itemOrderArray: [""], documentID: "")
+        let order3 = Order(postingUserID: "", name: "Aidan", emailAddress: "", phoneNumber: "", pickup: "Yes", timePickup: "3:00pm", itemOrderArray: [""], documentID: "")
+        orderArray.append(order1)
+        orderArray.append(order2)
+        orderArray.append(order3)
     }
 }

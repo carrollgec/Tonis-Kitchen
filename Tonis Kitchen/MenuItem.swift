@@ -16,24 +16,26 @@ class MenuItem {
     var allergyInfo: String
     var ingredients: String
     var quantity: Int
+    var isSelected: Bool
     var documentID: String
     
     var dictionary: [String: Any] {
-        return ["item": item, "menuItemImage": menuItemImage, "description": description, "allergyInfo": allergyInfo, "ingredients": ingredients, "quantity": quantity]
+        return ["item": item, "menuItemImage": menuItemImage, "description": description, "allergyInfo": allergyInfo, "ingredients": ingredients, "quantity": quantity, "isSelected": isSelected]
     }
     
-    init(item: String, menuItemImage: String, description: String, allergyInfo: String, ingredients: String, quantity: Int, documentID: String) {
+    init(item: String, menuItemImage: String, description: String, allergyInfo: String, ingredients: String, quantity: Int, isSelected: Bool, documentID: String) {
         self.item = item
         self.menuItemImage = menuItemImage
         self.description = description
         self.allergyInfo = allergyInfo
         self.ingredients = ingredients
         self.quantity = quantity
+        self.isSelected = isSelected
         self.documentID = documentID
     }
     
     convenience init() {
-        self.init(item: "", menuItemImage: "", description: "", allergyInfo: "", ingredients: "", quantity: 0, documentID: "")
+        self.init(item: "", menuItemImage: "", description: "", allergyInfo: "", ingredients: "", quantity: 0, isSelected: false, documentID: "")
     }
     
     convenience init(dictionary: [String: Any]) {
@@ -43,7 +45,8 @@ class MenuItem {
         let allergyInfo = dictionary["allergyInfo"] as! String? ?? ""
         let ingredients = dictionary["ingredients"] as! String? ?? ""
         let quantity = dictionary["quantity"] as! Int? ?? 0
-        self.init(item: item, menuItemImage: menuItemImage, description: description, allergyInfo: allergyInfo, ingredients: ingredients, quantity: quantity, documentID: "")
+        let isSelected = dictionary["isSelected"] as! Bool? ?? false
+        self.init(item: item, menuItemImage: menuItemImage, description: description, allergyInfo: allergyInfo, ingredients: ingredients, quantity: quantity, isSelected: isSelected, documentID: "")
     }
     
     func saveData(completion: @escaping (Bool) -> ()){

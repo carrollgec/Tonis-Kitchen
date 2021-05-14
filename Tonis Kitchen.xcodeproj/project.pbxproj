@@ -17,6 +17,7 @@
 		9093129E264223CF0088BB58 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9093129C264223CF0088BB58 /* LaunchScreen.storyboard */; };
 		90AFA9B4264D65DF000D6153 /* MenuItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90AFA9B3264D65DF000D6153 /* MenuItem.swift */; };
 		90AFA9B6264D65E9000D6153 /* MenuItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90AFA9B5264D65E9000D6153 /* MenuItems.swift */; };
+		90AFA9B8264D7EB6000D6153 /* OrderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90AFA9B7264D7EB6000D6153 /* OrderTableViewCell.swift */; };
 		90D66C45264C3249009A98A0 /* Orders.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90D66C44264C3249009A98A0 /* Orders.swift */; };
 		90F33FAC264225EF00DF6FAC /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 90F33FAB264225EF00DF6FAC /* GoogleService-Info.plist */; };
 		90F33FAE26422B6200DF6FAC /* HomeScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90F33FAD26422B6200DF6FAC /* HomeScreenViewController.swift */; };
@@ -39,6 +40,7 @@
 		9093129F264223CF0088BB58 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		90AFA9B3264D65DF000D6153 /* MenuItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuItem.swift; sourceTree = "<group>"; };
 		90AFA9B5264D65E9000D6153 /* MenuItems.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuItems.swift; sourceTree = "<group>"; };
+		90AFA9B7264D7EB6000D6153 /* OrderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderTableViewCell.swift; sourceTree = "<group>"; };
 		90D66C44264C3249009A98A0 /* Orders.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Orders.swift; sourceTree = "<group>"; };
 		90F33FAB264225EF00DF6FAC /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
 		90F33FAD26422B6200DF6FAC /* HomeScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreenViewController.swift; sourceTree = "<group>"; };
@@ -107,8 +109,9 @@
 				90931295264223CD0088BB58 /* LoginViewController.swift */,
 				90F33FAD26422B6200DF6FAC /* HomeScreenViewController.swift */,
 				90F33FAF2642311000DF6FAC /* MenuDetailViewController.swift */,
-				90F33FB12642345800DF6FAC /* OrderDetailViewController.swift */,
 				909051F42642D1FF00957256 /* OrderListViewController.swift */,
+				90F33FB12642345800DF6FAC /* OrderDetailViewController.swift */,
+				90AFA9B7264D7EB6000D6153 /* OrderTableViewCell.swift */,
 				90931297264223CD0088BB58 /* Main.storyboard */,
 				9093129A264223CF0088BB58 /* Assets.xcassets */,
 				9093129C264223CF0088BB58 /* LaunchScreen.storyboard */,
@@ -257,6 +260,7 @@
 				909051F72642D2EC00957256 /* Order.swift in Sources */,
 				90F33FB02642311000DF6FAC /* MenuDetailViewController.swift in Sources */,
 				909051F52642D1FF00957256 /* OrderListViewController.swift in Sources */,
+				90AFA9B8264D7EB6000D6153 /* OrderTableViewCell.swift in Sources */,
 				90F33FAE26422B6200DF6FAC /* HomeScreenViewController.swift in Sources */,
 				90D66C45264C3249009A98A0 /* Orders.swift in Sources */,
 				90931292264223CD0088BB58 /* AppDelegate.swift in Sources */,
