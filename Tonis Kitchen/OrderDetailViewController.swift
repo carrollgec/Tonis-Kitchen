@@ -15,23 +15,66 @@ class OrderDetailViewController: UIViewController {
     @IBOutlet weak var pickupTextField: UITextField!
     @IBOutlet weak var timeTextField: UITextField!
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var saveButton: UIBarButtonItem!
     
     var menuItems: MenuItems!
     var order: Order!
+    var orders: Orders!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        updateInterface()
+        
+        let tap = UITapGestureRecognizer(target: self.view, action: #selector(UIView.endEditing(_:)))
+        tap.cancelsTouchesInView = false
+        self.view.addGestureRecognizer(tap)
         
         tableView.delegate = self
         tableView.dataSource = self
         
-        order = Order()
+        if order == nil {
+            order = Order()
+        } else {
+            saveButton.isEnabled = false
+            nameTextField.isEnabled = false
+            addressTextField.isEnabled = false
+            phoneTextField.isEnabled = false
+            pickupTextField.isEnabled = false
+            timeTextField.isEnabled = false
+            tableView.allowsSelection = false
+        }
         
         menuItems = MenuItems()
+        orders = Orders()
+        
         menuItems.populateMenu()
+    
+        let isPresentingInAddMode = presentingViewController is UINavigationController
+        if !isPresentingInAddMode {
+            saveButton.isEnabled = false
+        }
     }
     
-    @IBAction func cancelButtonPressed(_ sender: UIBarButtonItem) {
+    func updateInterface() {
+        let isPresentingInAddMode = presentingViewController is UINavigationController
+        if !isPresentingInAddMode {
+            nameTextField.text = order.name
+            addressTextField.text = order.emailAddress
+            phoneTextField.text = order.phoneNumber
+            pickupTextField.text = order.pickup
+            timeTextField.text = order.timePickup
+        }
+    }
+    
+    func updateFromInterface() {
+        order.name = nameTextField.text ?? ""
+        order.emailAddress = addressTextField.text ?? ""
+        order.phoneNumber = phoneTextField.text ?? ""
+        order.pickup = pickupTextField.text ?? ""
+        order.timePickup = timeTextField.text ?? ""
+    }
+    
+    func leaveViewController() {
         let isPresentingInAddMode = presentingViewController is UINavigationController
         if isPresentingInAddMode {
             dismiss(animated: true, completion: nil)
@@ -40,8 +83,30 @@ class OrderDetailViewController: UIViewController {
         }
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        updateFromInterface()
+        order.saveData { success in
+            print("Success saving Data")
+        }
+    }
+    
+    @IBAction func cancelButtonPressed(_ sender: UIBarButtonItem) {
+        leaveViewController()
+    }
+    
     @IBAction func saveButtonPressed(_ sender: UIBarButtonItem) {
-        //TODO: code save button
+        updateFromInterface()
+        for index in 0..<menuItems.menuItemArray.count {
+            if menuItems.menuItemArray[index].isSelected {
+                order.itemOrderArray.append(menuItems.menuItemArray[index].item)
+            }
+        }
+        order.saveData { success in
+            if success {
+                print("Success saving new order")
+            }
+        }
+        leaveViewController()
     }
     
 }
@@ -51,13 +116,7 @@ extension OrderDetailViewController: UITableViewDataSource, UITableViewDelegate,
         if let selectedIndexPath = tableView.indexPath(for: sender) {
             menuItems.menuItemArray[selectedIndexPath.row].isSelected = !menuItems.menuItemArray[selectedIndexPath.row].isSelected
             tableView.reloadRows(at: [selectedIndexPath], with: .automatic)
-            if menuItems.menuItemArray[selectedIndexPath.row].isSelected {
-                order.itemOrderArray.insert(menuItems.menuItemArray[selectedIndexPath.row].item, at: selectedIndexPath.row)
-            } else {
-                order.itemOrderArray.remove(at: selectedIndexPath.row)
-            }
         }
-        print(order.itemOrderArray)
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

@@ -16,11 +16,36 @@ class OrderListViewController: UIViewController {
         super.viewDidLoad()
         tableView.dataSource = self
         tableView.delegate = self
-        
         orders = Orders()
-        orders.populateOrders()
+        
+        orders.loadData {
+            self.tableView.reloadData()
+        }
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "ShowOrder" {
+            let destination = segue.destination as! OrderDetailViewController
+            let selectedIndexPath = tableView.indexPathForSelectedRow!
+            destination.order = orders.orderArray[selectedIndexPath.row]
+        }
+    }
+    
+    @IBAction func unwindFromSegue(segue: UIStoryboardSegue) {
+        let source = segue.source as! OrderDetailViewController
+        if let selectedIndexPath = tableView.indexPathForSelectedRow {
+            orders.orderArray[selectedIndexPath.row] = source.order
+            tableView.reloadRows(at: [selectedIndexPath], with: .automatic)
+        } else {
+            let newIndexPath = IndexPath(row: orders.orderArray.count, section: 0)
+            orders.orderArray.append(source.order)
+            print(orders.orderArray)
+            tableView.insertRows(at: [newIndexPath], with: .bottom)
+            orders.loadData {
+                self.tableView.reloadData()
+            }
+        }
+    }
 }
 
 extension OrderListViewController: UITableViewDelegate, UITableViewDataSource {

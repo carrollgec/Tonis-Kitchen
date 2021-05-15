@@ -7,6 +7,13 @@
 
 import UIKit
 
+private let dateFormatter: DateFormatter = {
+    let dateFormatter = DateFormatter()
+    dateFormatter.dateStyle = .short
+    dateFormatter.timeStyle = .short
+    return dateFormatter
+}()
+
 class HomeScreenViewController: UIViewController {
     
     @IBOutlet weak var selectionWeekTextField: UITextField!
@@ -17,15 +24,17 @@ class HomeScreenViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        menuItems = MenuItems()
+        let tap = UITapGestureRecognizer(target: self.view, action: #selector(UIView.endEditing(_:)))
+        tap.cancelsTouchesInView = false
+        self.view.addGestureRecognizer(tap)
         
+        menuItems = MenuItems()
         menuItems.populateMenu()
         
         menuTableView.delegate = self
         menuTableView.dataSource = self
 
     }
-    //TODO: code prepare for segue to transfer menu item info to menu detail view controller
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "ShowMenu" {
             let destination = segue.destination as! MenuDetailViewController

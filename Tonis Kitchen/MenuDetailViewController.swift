@@ -30,6 +30,18 @@ class MenuDetailViewController: UIViewController {
         allergensTextView.text = menuItem.allergyInfo
         ingredientsTextView.text = menuItem.ingredients
         quantityLabel.text = String(menuItem.quantity)
+        switch menuItem.item {
+        case "Apple":
+            imageView.image = UIImage(named: "apple")
+        case "Pasta":
+            imageView.image = UIImage(named: "rotini")
+        case "Fresh Bread":
+            imageView.image = UIImage(named: "freshbread")
+        case "Eggplant Parmesean (Frozen Meal) ":
+            imageView.image = UIImage(named: "eggplantparm")
+        default:
+            imageView.image = UIImage()
+        }
     }
 
 }
