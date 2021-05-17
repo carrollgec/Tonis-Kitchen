@@ -37,7 +37,7 @@ class MenuDetailViewController: UIViewController {
             imageView.image = UIImage(named: "rotini")
         case "Fresh Bread":
             imageView.image = UIImage(named: "freshbread")
-        case "Eggplant Parmesean (Frozen Meal) ":
+        case "Eggplant Parmesean (Frozen Meal)":
             imageView.image = UIImage(named: "eggplantparm")
         default:
             imageView.image = UIImage()
