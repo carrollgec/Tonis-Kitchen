@@ -16,8 +16,8 @@ private let dateFormatter: DateFormatter = {
 
 class HomeScreenViewController: UIViewController {
     
-    @IBOutlet weak var selectionWeekTextField: UITextField!
     @IBOutlet weak var menuTableView: UITableView!
+    @IBOutlet weak var adminViewBarButton: UIBarButtonItem!
     
     var menuItems: MenuItems!
 

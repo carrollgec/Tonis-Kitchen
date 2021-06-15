@@ -111,23 +111,15 @@ class OrderDetailViewController: UIViewController {
     
 }
 
-extension OrderDetailViewController: UITableViewDataSource, UITableViewDelegate, OrderTableViewCellDelegate {
-    func selectionBoxToggle(sender: OrderTableViewCell) {
-        if let selectedIndexPath = tableView.indexPath(for: sender) {
-            menuItems.menuItemArray[selectedIndexPath.row].isSelected = !menuItems.menuItemArray[selectedIndexPath.row].isSelected
-            tableView.reloadRows(at: [selectedIndexPath], with: .automatic)
-        }
-    }
-    
+extension OrderDetailViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return menuItems.menuItemArray.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! OrderTableViewCell
-        cell.delegate = self
-        cell.itemNameLabel.text = menuItems.menuItemArray[indexPath.row].item
-        cell.selectionButton.isSelected = menuItems.menuItemArray[indexPath.row].isSelected
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
+        cell.textLabel?.text = menuItems.menuItemArray[indexPath.row].item
+        cell.detailTextLabel?.text = "Quantity Selected: "
         return cell
     }
 }

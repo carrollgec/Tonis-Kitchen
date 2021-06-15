@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		906ADB7626793399006D0C47 /* ItemInOrderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 906ADB7526793399006D0C47 /* ItemInOrderViewController.swift */; };
 		909051F52642D1FF00957256 /* OrderListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 909051F42642D1FF00957256 /* OrderListViewController.swift */; };
 		909051F72642D2EC00957256 /* Order.swift in Sources */ = {isa = PBXBuildFile; fileRef = 909051F62642D2EC00957256 /* Order.swift */; };
 		90931292264223CD0088BB58 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90931291264223CD0088BB58 /* AppDelegate.swift */; };
@@ -15,9 +16,9 @@
 		90931299264223CD0088BB58 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 90931297264223CD0088BB58 /* Main.storyboard */; };
 		9093129B264223CF0088BB58 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9093129A264223CF0088BB58 /* Assets.xcassets */; };
 		9093129E264223CF0088BB58 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9093129C264223CF0088BB58 /* LaunchScreen.storyboard */; };
+		909A9F5826791FA70064A7F5 /* AdminHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 909A9F5726791FA70064A7F5 /* AdminHomeViewController.swift */; };
 		90AFA9B4264D65DF000D6153 /* MenuItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90AFA9B3264D65DF000D6153 /* MenuItem.swift */; };
 		90AFA9B6264D65E9000D6153 /* MenuItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90AFA9B5264D65E9000D6153 /* MenuItems.swift */; };
-		90AFA9B8264D7EB6000D6153 /* OrderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90AFA9B7264D7EB6000D6153 /* OrderTableViewCell.swift */; };
 		90D66C45264C3249009A98A0 /* Orders.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90D66C44264C3249009A98A0 /* Orders.swift */; };
 		90F33FAC264225EF00DF6FAC /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 90F33FAB264225EF00DF6FAC /* GoogleService-Info.plist */; };
 		90F33FAE26422B6200DF6FAC /* HomeScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90F33FAD26422B6200DF6FAC /* HomeScreenViewController.swift */; };
@@ -28,6 +29,7 @@
 
 /* Begin PBXFileReference section */
 		60C80C4A25572814BBD92B69 /* Pods_Tonis_Kitchen.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Tonis_Kitchen.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		906ADB7526793399006D0C47 /* ItemInOrderViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemInOrderViewController.swift; sourceTree = "<group>"; };
 		909051F42642D1FF00957256 /* OrderListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderListViewController.swift; sourceTree = "<group>"; };
 		909051F62642D2EC00957256 /* Order.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Order.swift; sourceTree = "<group>"; };
 		9093128E264223CD0088BB58 /* Tonis Kitchen.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Tonis Kitchen.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -38,9 +40,9 @@
 		9093129A264223CF0088BB58 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9093129D264223CF0088BB58 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9093129F264223CF0088BB58 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		909A9F5726791FA70064A7F5 /* AdminHomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminHomeViewController.swift; sourceTree = "<group>"; };
 		90AFA9B3264D65DF000D6153 /* MenuItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuItem.swift; sourceTree = "<group>"; };
 		90AFA9B5264D65E9000D6153 /* MenuItems.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuItems.swift; sourceTree = "<group>"; };
-		90AFA9B7264D7EB6000D6153 /* OrderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderTableViewCell.swift; sourceTree = "<group>"; };
 		90D66C44264C3249009A98A0 /* Orders.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Orders.swift; sourceTree = "<group>"; };
 		90F33FAB264225EF00DF6FAC /* GoogleService-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
 		90F33FAD26422B6200DF6FAC /* HomeScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreenViewController.swift; sourceTree = "<group>"; };
@@ -111,7 +113,8 @@
 				90F33FAF2642311000DF6FAC /* MenuDetailViewController.swift */,
 				909051F42642D1FF00957256 /* OrderListViewController.swift */,
 				90F33FB12642345800DF6FAC /* OrderDetailViewController.swift */,
-				90AFA9B7264D7EB6000D6153 /* OrderTableViewCell.swift */,
+				906ADB7526793399006D0C47 /* ItemInOrderViewController.swift */,
+				909A9F5726791FA70064A7F5 /* AdminHomeViewController.swift */,
 				90931297264223CD0088BB58 /* Main.storyboard */,
 				9093129A264223CF0088BB58 /* Assets.xcassets */,
 				9093129C264223CF0088BB58 /* LaunchScreen.storyboard */,
@@ -255,12 +258,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				90AFA9B6264D65E9000D6153 /* MenuItems.swift in Sources */,
+				909A9F5826791FA70064A7F5 /* AdminHomeViewController.swift in Sources */,
 				90F33FB22642345800DF6FAC /* OrderDetailViewController.swift in Sources */,
 				90931296264223CD0088BB58 /* LoginViewController.swift in Sources */,
 				909051F72642D2EC00957256 /* Order.swift in Sources */,
 				90F33FB02642311000DF6FAC /* MenuDetailViewController.swift in Sources */,
+				906ADB7626793399006D0C47 /* ItemInOrderViewController.swift in Sources */,
 				909051F52642D1FF00957256 /* OrderListViewController.swift in Sources */,
-				90AFA9B8264D7EB6000D6153 /* OrderTableViewCell.swift in Sources */,
 				90F33FAE26422B6200DF6FAC /* HomeScreenViewController.swift in Sources */,
 				90D66C45264C3249009A98A0 /* Orders.swift in Sources */,
 				90931292264223CD0088BB58 /* AppDelegate.swift in Sources */,
