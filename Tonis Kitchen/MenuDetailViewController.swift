@@ -14,7 +14,7 @@ class MenuDetailViewController: UIViewController {
     @IBOutlet weak var descriptionTextView: UITextView!
     @IBOutlet weak var allergensTextView: UITextView!
     @IBOutlet weak var ingredientsTextView: UITextView!
-    @IBOutlet weak var quantityLabel: UILabel!
+    @IBOutlet weak var metricLabel: UILabel!
     
     
     var menuItem: MenuItem!
@@ -29,7 +29,7 @@ class MenuDetailViewController: UIViewController {
         descriptionTextView.text = menuItem.description
         allergensTextView.text = menuItem.allergyInfo
         ingredientsTextView.text = menuItem.ingredients
-        quantityLabel.text = String(menuItem.quantity)
+        metricLabel.text = String(menuItem.metric)
         switch menuItem.item {
         case "Apple":
             imageView.image = UIImage(named: "apple")

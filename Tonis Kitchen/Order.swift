@@ -15,28 +15,28 @@ class Order: NSObject {
     var emailAddress: String
     var phoneNumber: String
     var pickup: String
-    var timePickup: String
+    var notes: String
     var itemOrderArray: [String]
     var documentID: String
     
     
     var dictionary: [String: Any] {
-        return ["postingUserID": postingUserID,"name" : name, "emailAddress": emailAddress, "phoneNumber": phoneNumber, "pickup": pickup, "timePickup": timePickup, "itemOrderArray": itemOrderArray]
+        return ["postingUserID": postingUserID,"name" : name, "emailAddress": emailAddress, "phoneNumber": phoneNumber, "pickup": pickup, "notes": notes, "itemOrderArray": itemOrderArray]
     }
     
-    init(postingUserID: String, name: String, emailAddress: String, phoneNumber: String, pickup: String, timePickup: String, itemOrderArray: [String], documentID: String) {
+    init(postingUserID: String, name: String, emailAddress: String, phoneNumber: String, pickup: String, notes: String, itemOrderArray: [String], documentID: String) {
         self.postingUserID = postingUserID
         self.name = name
         self.emailAddress = emailAddress
         self.phoneNumber = phoneNumber
         self.pickup = pickup
-        self.timePickup = timePickup
+        self.notes = notes
         self.itemOrderArray = itemOrderArray
         self.documentID = documentID
     }
     
     convenience override init() {
-        self.init(postingUserID: "", name: "", emailAddress: "", phoneNumber: "", pickup: "", timePickup: "", itemOrderArray: [""], documentID: "")
+        self.init(postingUserID: "", name: "", emailAddress: "", phoneNumber: "", pickup: "", notes: "", itemOrderArray: [""], documentID: "")
     }
     
     convenience init(dictionary: [String: Any]) {
@@ -45,9 +45,9 @@ class Order: NSObject {
         let emailAddress = dictionary["emailAddress"] as! String? ?? ""
         let phoneNumber = dictionary["phoneNumber"] as! String? ?? ""
         let pickup = dictionary["pickup"] as! String? ?? ""
-        let timePickup = dictionary["timePickup"] as! String? ?? ""
+        let notes = dictionary["notes"] as! String? ?? ""
         let itemOrderArray = dictionary["itemOrderArray"] as! [String]? ?? [""]
-        self.init(postingUserID: postingUserID, name: name, emailAddress: emailAddress, phoneNumber: phoneNumber, pickup: pickup, timePickup: timePickup, itemOrderArray: itemOrderArray, documentID: "")
+        self.init(postingUserID: postingUserID, name: name, emailAddress: emailAddress, phoneNumber: phoneNumber, pickup: pickup, notes: notes, itemOrderArray: itemOrderArray, documentID: "")
     }
     
     func saveData(completion: @escaping (Bool) -> ()){

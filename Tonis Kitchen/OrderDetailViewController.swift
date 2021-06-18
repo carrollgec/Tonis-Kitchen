@@ -12,9 +12,9 @@ class OrderDetailViewController: UIViewController {
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var addressTextField: UITextField!
     @IBOutlet weak var phoneTextField: UITextField!
-    @IBOutlet weak var pickupTextField: UITextField!
     @IBOutlet weak var timeTextField: UITextField!
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var notesTextField: UITextField!
     @IBOutlet weak var saveButton: UIBarButtonItem!
     
     var menuItems: MenuItems!
@@ -39,8 +39,8 @@ class OrderDetailViewController: UIViewController {
             nameTextField.isEnabled = false
             addressTextField.isEnabled = false
             phoneTextField.isEnabled = false
-            pickupTextField.isEnabled = false
             timeTextField.isEnabled = false
+            notesTextField.isEnabled = false
             tableView.allowsSelection = false
         }
         
@@ -61,8 +61,8 @@ class OrderDetailViewController: UIViewController {
             nameTextField.text = order.name
             addressTextField.text = order.emailAddress
             phoneTextField.text = order.phoneNumber
-            pickupTextField.text = order.pickup
-            timeTextField.text = order.timePickup
+            timeTextField.text = order.pickup
+            notesTextField.text = order.notes
         }
     }
     
@@ -70,8 +70,8 @@ class OrderDetailViewController: UIViewController {
         order.name = nameTextField.text ?? ""
         order.emailAddress = addressTextField.text ?? ""
         order.phoneNumber = phoneTextField.text ?? ""
-        order.pickup = pickupTextField.text ?? ""
-        order.timePickup = timeTextField.text ?? ""
+        order.pickup = timeTextField.text ?? ""
+        order.notes = notesTextField.text ?? ""
     }
     
     func leaveViewController() {
@@ -84,10 +84,25 @@ class OrderDetailViewController: UIViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        updateFromInterface()
-        order.saveData { success in
-            print("Success saving Data")
+        if segue.identifier == "AddItems" {
+            let destination = segue.destination as! ItemInOrderViewController
+            let selectedIndexPath = tableView.indexPathForSelectedRow!
+            destination.menuItem = menuItems.menuItemArray[selectedIndexPath.row]
+        }else {
+            updateFromInterface()
+            order.saveData { success in
+                print("Success saving Data")
+            }
         }
+    }
+    
+    @IBAction func unwindFromItem(segue: UIStoryboardSegue) {
+        let source = segue.source as! ItemInOrderViewController
+        if let selectedIndexPath = tableView.indexPathForSelectedRow {
+            menuItems.menuItemArray[selectedIndexPath.row].quantity = source.quantityStepper.value
+            tableView.reloadRows(at: [selectedIndexPath], with: .automatic)
+        }
+        order.itemOrderArray += source.itemOrderArray
     }
     
     @IBAction func cancelButtonPressed(_ sender: UIBarButtonItem) {
@@ -96,9 +111,14 @@ class OrderDetailViewController: UIViewController {
     
     @IBAction func saveButtonPressed(_ sender: UIBarButtonItem) {
         updateFromInterface()
-        for index in 0..<menuItems.menuItemArray.count {
-            if menuItems.menuItemArray[index].isSelected {
-                order.itemOrderArray.append(menuItems.menuItemArray[index].item)
+//        for index in 0..<menuItems.menuItemArray.count {
+//            if menuItems.menuItemArray[index].isSelected {
+//                order.itemOrderArray.append(menuItems.menuItemArray[index].item)
+//            }
+//        }
+        for index in 0...order.itemOrderArray.count - 1  {
+            if order.itemOrderArray[index] == "" {
+                order.itemOrderArray.remove(at: index)
             }
         }
         order.saveData { success in
@@ -119,7 +139,7 @@ extension OrderDetailViewController: UITableViewDataSource, UITableViewDelegate 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
         cell.textLabel?.text = menuItems.menuItemArray[indexPath.row].item
-        cell.detailTextLabel?.text = "Quantity Selected: "
+        cell.detailTextLabel?.text = "Quantity Selected: \(Int(menuItems.menuItemArray[indexPath.row].quantity))"
         return cell
     }
 }

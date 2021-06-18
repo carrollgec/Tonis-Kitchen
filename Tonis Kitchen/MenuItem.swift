@@ -15,27 +15,29 @@ class MenuItem {
     var description: String
     var allergyInfo: String
     var ingredients: String
-    var quantity: Int
+    var quantity: Double
+    var metric: String
     var isSelected: Bool
     var documentID: String
     
     var dictionary: [String: Any] {
-        return ["item": item, "menuItemImage": menuItemImage, "description": description, "allergyInfo": allergyInfo, "ingredients": ingredients, "quantity": quantity, "isSelected": isSelected]
+        return ["item": item, "menuItemImage": menuItemImage, "description": description, "allergyInfo": allergyInfo, "ingredients": ingredients, "quantity": quantity, "metric": metric, "isSelected": isSelected]
     }
     
-    init(item: String, menuItemImage: String, description: String, allergyInfo: String, ingredients: String, quantity: Int, isSelected: Bool, documentID: String) {
+    init(item: String, menuItemImage: String, description: String, allergyInfo: String, ingredients: String, quantity: Double, metric: String, isSelected: Bool, documentID: String) {
         self.item = item
         self.menuItemImage = menuItemImage
         self.description = description
         self.allergyInfo = allergyInfo
         self.ingredients = ingredients
         self.quantity = quantity
+        self.metric = metric
         self.isSelected = isSelected
         self.documentID = documentID
     }
     
     convenience init() {
-        self.init(item: "", menuItemImage: "", description: "", allergyInfo: "", ingredients: "", quantity: 0, isSelected: false, documentID: "")
+        self.init(item: "", menuItemImage: "", description: "", allergyInfo: "", ingredients: "", quantity: 0, metric: "", isSelected: false, documentID: "")
     }
     
     convenience init(dictionary: [String: Any]) {
@@ -44,9 +46,10 @@ class MenuItem {
         let description = dictionary["description"] as! String? ?? ""
         let allergyInfo = dictionary["allergyInfo"] as! String? ?? ""
         let ingredients = dictionary["ingredients"] as! String? ?? ""
-        let quantity = dictionary["quantity"] as! Int? ?? 0
+        let quantity = dictionary["quantity"] as! Double? ?? 0.0
+        let metric = dictionary["metric"] as! String? ?? ""
         let isSelected = dictionary["isSelected"] as! Bool? ?? false
-        self.init(item: item, menuItemImage: menuItemImage, description: description, allergyInfo: allergyInfo, ingredients: ingredients, quantity: quantity, isSelected: isSelected, documentID: "")
+        self.init(item: item, menuItemImage: menuItemImage, description: description, allergyInfo: allergyInfo, ingredients: ingredients, quantity: quantity, metric: metric, isSelected: isSelected, documentID: "")
     }
     
     func saveData(completion: @escaping (Bool) -> ()){

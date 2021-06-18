@@ -55,7 +55,7 @@ extension OrderListViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
-        cell.textLabel?.text = orders.orderArray[indexPath.row].timePickup
+        cell.textLabel?.text = orders.orderArray[indexPath.row].notes
         return cell
     }
     
